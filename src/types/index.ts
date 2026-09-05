@@ -12,7 +12,7 @@ export interface Product {
   id: string;
   name: string;
   slug: string;
-  category: 'shirt' | 't-shirt' | 'hoodie' | 'pants';
+  category: 'shirt' | 't-shirt' | 'hoodie' | 'pants' | 'jacket';
   description: string;
   isNew?: boolean;
   variants: ProductVariant[];

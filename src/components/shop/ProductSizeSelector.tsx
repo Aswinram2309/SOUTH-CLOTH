@@ -4,14 +4,13 @@ interface ProductSizeSelectorProps {
   sizes: string[];
   selectedSize: string;
   onSizeSelect: (size: string) => void;
-  category: 'shirt' | 't-shirt' | 'hoodie' | 'pants';
+  category?: 'shirt' | 't-shirt' | 'hoodie' | 'pants' | 'jacket';
 }
 
 export const ProductSizeSelector: React.FC<ProductSizeSelectorProps> = ({
   sizes,
   selectedSize,
   onSizeSelect,
-  category,
 }) => {
   if (!sizes || sizes.length === 0) return null;
 

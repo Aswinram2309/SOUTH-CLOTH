@@ -1,0 +1,22 @@
+import React from 'react';
+import type { ReactNode } from 'react';
+import { Header } from './Header';
+import { Footer } from './Footer';
+import { CartDrawer } from '../shop/CartDrawer';
+
+interface LayoutProps {
+  children: ReactNode;
+}
+
+export const Layout: React.FC<LayoutProps> = ({ children }) => {
+  return (
+    <div className="flex flex-col min-h-screen">
+      <Header />
+      <main className="flex-1">
+        {children}
+      </main>
+      <Footer />
+      <CartDrawer />
+    </div>
+  );
+};

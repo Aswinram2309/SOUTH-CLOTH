@@ -99,34 +99,36 @@ export const ProductDetails: React.FC = () => {
       <div className="flex flex-col md:flex-row gap-8 lg:gap-12 max-w-6xl mx-auto">
         
         {/* LEFT COLUMN: Gallery */}
-        <div className="w-full md:w-1/2 flex flex-col gap-4">
-          <div className="aspect-product bg-surface rounded-lg overflow-hidden relative">
+        <div className="w-full md:w-1/2 flex flex-col gap-3">
+          <div 
+            className="product-main-img-box bg-surface rounded-lg overflow-hidden relative flex items-center justify-center border border-border w-full"
+          >
             <img 
               src={mainImage} 
               alt={product.name} 
-              className="w-full h-full object-cover transition-opacity duration-300"
+              className="w-full h-full object-contain p-3 transition-opacity duration-300"
             />
             {product.isNew && (
-              <div className="absolute top-4 left-4">
-                <span className="badge badge-new text-sm px-3 py-1">New Arrival</span>
+              <div className="absolute top-3 left-3">
+                <span className="badge badge-new text-xs px-2.5 py-1">New Arrival</span>
               </div>
             )}
           </div>
           
           {/* Thumbnails of current variant */}
           {selectedVariant.images.length > 1 && (
-            <div className="flex gap-3 overflow-x-auto scrollbar-hide pb-2">
+            <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-2">
               {selectedVariant.images.map((img, idx) => (
                 <button
                   key={idx}
                   onClick={() => setMainImage(img)}
-                  className={`w-24 h-32 flex-shrink-0 rounded-md overflow-hidden border-2 transition-all ${
+                  className={`w-16 h-16 flex-shrink-0 rounded-md overflow-hidden border-2 bg-surface p-1 transition-all ${
                     mainImage === img 
                       ? 'border-primary opacity-100' 
                       : 'border-transparent opacity-60 hover:opacity-100'
                   }`}
                 >
-                  <img src={img} alt="" className="w-full h-full object-cover" loading="lazy" />
+                  <img src={img} alt="" className="w-full h-full object-contain" loading="lazy" />
                 </button>
               ))}
             </div>

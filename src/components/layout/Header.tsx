@@ -19,7 +19,7 @@ export const Header: React.FC = () => {
 
         {/* Logo */}
         <Link to="/" className="flex items-center justify-center">
-          <img src={logoImg} alt="Southzone Logo" style={{ height: '48px', objectFit: 'contain' }} />
+          <img src={logoImg} alt="Southzone Logo" style={{ height: '54px', objectFit: 'contain' }} />
         </Link>
 
         {/* Desktop Navigation */}
@@ -53,7 +53,7 @@ export const Header: React.FC = () => {
       {isMobileMenuOpen && (
         <div className="fixed inset-0 bg-white z-50 flex flex-col p-4 animate-fade-in" style={{ zIndex: 200, position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}>
           <div className="flex justify-between items-center mb-8">
-            <img src={logoImg} alt="Southzone Logo" style={{ height: '48px', objectFit: 'contain' }} />
+            <img src={logoImg} alt="Southzone Logo" style={{ height: '50px', objectFit: 'contain' }} />
             <button onClick={() => setIsMobileMenuOpen(false)}>
               <X size={28} />
             </button>
